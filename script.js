@@ -3,6 +3,24 @@
 async function getCountries() {
     const response = await fetch("https://restcountries.com/v3.1/all")
     const data = response.json()
+
+    const countries = []
+    data.forEach(element => {
+        countries.push({
+            "nome": element.name.common,
+            "continente": element.continents[0],
+            "bandeiras": {
+                "png": element.flags.png,
+                "svg": element.flags.svg,
+                "alt": element.flags.alt
+            },
+            "moedas": element.currencies,
+            "populacao": element.population,
+            "lingua": element.languages,
+            "capital": element.capital
+        })
+    });
+
     return data
 }
 
@@ -12,7 +30,7 @@ async function getCountry(country) {//
     return data
 }
 
-emdev("brazil")
+getCountries("brazil")
   .then(data => {
     if (data) {
       data.forEach(country => {
