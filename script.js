@@ -12,20 +12,6 @@ async function getCountry(country) {//
     return data
 }
 
-emdev("brazil")
-  .then(data => {
-    if (data) {
-      data.forEach(country => {
-        console.log(country);
-      });
-    } else {
-      console.error('Não foi possível obter os dados dos países.');
-    }
-  })
-  .catch(error => {
-    console.error('Erro:', error);
-  });
-
 if('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./service-worker.js')
