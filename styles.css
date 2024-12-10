@@ -83,7 +83,3 @@ body {
   background-color: #388e3c; /* Cor verde mais escuro no clique */
   transform: scale(1);
 }
-
-#install-button[style*="display: none"] {
-  display: none; /* Garantir que o botão fique oculto até o evento beforeinstallprompt */
-}
