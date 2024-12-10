@@ -5,10 +5,10 @@ self.addEventListener('install', (event) => {
         caches.open('countries-cache').then((cache) => {
             return cache.addAll([
                 '/',
-                '/',
-                '/',
-                '/',
-                '/'
+                '/script.js',
+                '/ui.js',
+                '/index.html',
+                '/styles.css'
             ])
         })
     )
