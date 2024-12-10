@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111517;
+}
+
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #111517;
+}
+
+.dark-mode-toggle:hover {
+  opacity: 0.8;
+}
+
+/* Dark mode styles */
+.dark {
+  background-color: #2b3945;
+}
+
+.dark .header {
+  background-color: #2b3945;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark .title,
+.dark .dark-mode-toggle {
+  color: white;
+}
+
+/* Moon icon using Unicode */
+.moon-icon {
+  font-size: 0.875rem;
+}
