@@ -57,3 +57,29 @@ body {
 .moon-icon {
   font-size: 0.875rem;
 }
+
+#install-button {
+  position: absolute;
+  bottom: 1rem;
+  left: calc(50% - 68px);
+  background-color: #4CAF50; /* Cor verde */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+#install-button:hover {
+  background-color: #45a049; /* Cor verde mais escuro no hover */
+  transform: scale(1.05); /* Leve aumento de tamanho no hover */
+}
+
+#install-button:active {
+  background-color: #388e3c; /* Cor verde mais escuro no clique */
+  transform: scale(1);
+}

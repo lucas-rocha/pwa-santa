@@ -4,11 +4,11 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open('countries-cache').then((cache) => {
             return cache.addAll([
-                '/',
-                '/script.js',
-                '/ui.js',
-                '/index.html',
-                '/styles.css'
+                './',
+                './script.js',
+                './ui.js',
+                './index.html',
+                './styles.css'
             ])
         })
     )
