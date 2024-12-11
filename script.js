@@ -77,21 +77,23 @@ const cardContainer = document.querySelector('#card-container')
 
 getCountries().then(data => {
   let cardsHTML = '';
-  data.forEach(item => {
-    console.log(item)
-    cardsHTML += `
-      <div class="card">
-        <img src="${item.bandeiras.png}" alt="Flag of ${item.name}" class="card-flag">
-        <div class="card-content">
-          <h2 class="card-title">${item.nome}</h2>
-          <div class="card-details">
-              <p><span class="card-label">Population: </span><span class="card-value">${item.populacao.toLocaleString()}</span></p>
-              <p><span class="card-label">Region: </span><span class="card-value">${item.continente}</span></p>
-              <p><span class="card-label">Capital: </span><span class="card-value">${item.capital}</span></p>
+  if(data) {
+    data.forEach(item => {
+      console.log(item)
+      cardsHTML += `
+        <div class="card">
+          <img src="${item.bandeiras.png}" alt="Flag of ${item.name}" class="card-flag">
+          <div class="card-content">
+            <h2 class="card-title">${item.nome}</h2>
+            <div class="card-details">
+                <p><span class="card-label">Population: </span><span class="card-value">${item.populacao.toLocaleString()}</span></p>
+                <p><span class="card-label">Region: </span><span class="card-value">${item.continente}</span></p>
+                <p><span class="card-label">Capital: </span><span class="card-value">${item.capital}</span></p>
+            </div>
           </div>
         </div>
-      </div>
-    `;
-  });
+      `;
+    });
+  }
   cardContainer.innerHTML = cardsHTML; // Define todo o HTML acumulado de uma vez
 });
