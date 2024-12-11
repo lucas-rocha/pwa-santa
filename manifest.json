@@ -1,15 +1,15 @@
 {
-    "name": "",
-    "short_name": "",
-    "start_url": "/",
-    "display": "",
+    "name": "PWA Teste",
+    "short_name": "TesteUnisanta",
+    "start_url": "https://lucas-rocha.github.io/pwa-santa/",
+    "display": "fullscreen",
     "theme_color": "",
     "background_color": "",
     "icons": [
         {
-            "src": "",
-            "sizes": "",
-            "type": ""
+            "src": "./icons8-partilhar-24.png",
+            "sizes": "24x24",
+            "type": "image/png"
         }
     ]
 }
