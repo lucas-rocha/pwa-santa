@@ -2,7 +2,7 @@
     "name": "PWA Teste",
     "short_name": "TesteUnisanta",
     "start_url": "https://lucas-rocha.github.io/pwa-santa/",
-    "display": "fullscreen",
+    "display": "standalone",
     "theme_color": "",
     "background_color": "",
     "icons": [
