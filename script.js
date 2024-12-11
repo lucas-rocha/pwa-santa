@@ -33,8 +33,6 @@ async function getCountry(country) {//
     return data
 }
 
-let deferredPrompt; 
-
 if('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./service-worker.js')
@@ -47,29 +45,33 @@ if('serviceWorker' in navigator) {
     })
 }
 
+let deferredPrompt;
+
 window.addEventListener('beforeinstallprompt', (e) => {
-  // Previne que o navegador mostre o prompt padrão
-  e.preventDefault();
+  console.log('beforeinstallprompt disparado'); // Log para verificar o evento
+
+  e.preventDefault(); // Previne o prompt padrão
   deferredPrompt = e; // Salva o evento para uso posterior
 
-  // Mostra o botão de instalação
   const installButton = document.getElementById('install-button');
-  installButton.style.display = 'block';
+  installButton.style.display = 'block'; // Exibe o botão quando disponível
 
   installButton.addEventListener('click', () => {
-    // Mostra o prompt de instalação
-    deferredPrompt.prompt();
-    // Verifica a resposta do usuário
+    console.log('Botão clicado. Mostrando prompt...');
+    deferredPrompt.prompt(); // Exibe o prompt de instalação
+
     deferredPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
         console.log('Usuário aceitou instalar a PWA.');
       } else {
         console.log('Usuário recusou instalar a PWA.');
       }
-      deferredPrompt = null; // Reseta o evento
+      deferredPrompt = null; // Reseta o evento para evitar múltiplos prompts
+      installButton.style.display = 'none'; // Esconde o botão após a interação
     });
   });
 });
+
 
 const cardContainer = document.querySelector('#card-container')
 
