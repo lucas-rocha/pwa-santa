@@ -7,8 +7,8 @@
     "background_color": "#FFFFFF",
     "icons": [
         {
-            "src": "./icons8-partilhar-24.png",
-            "sizes": "24x24",
+            "src": "./big_13653650.png",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ]
