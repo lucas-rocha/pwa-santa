@@ -1,27 +1,30 @@
 
 
 async function getCountries() {
-    const response = await fetch("https://restcountries.com/v3.1/all")
-    const data = response.json()
-
-    const countries = []
-    data.forEach(element => {
-        countries.push({
-            "nome": element.name.common,
-            "continente": element.continents[0],
-            "bandeiras": {
-                "png": element.flags.png,
-                "svg": element.flags.svg,
-                "alt": element.flags.alt
-            },
-            "moedas": element.currencies,
-            "populacao": element.population,
-            "lingua": element.languages,
-            "capital": element.capital
-        })
-    });
-
-    return data
+    try {
+        const response = await fetch("https://restcountries.com/v3.1/all")
+        const data = await response.json()
+        
+        const countries = []
+        data.map(element => {
+            countries.push({
+                "nome": element.name.common,
+                "continente": element.continents[0],
+                "bandeiras": {
+                    "png": element.flags.png,
+                    "svg": element.flags.svg,
+                    "alt": element.flags.alt
+                },
+                "moedas": element.currencies,
+                "populacao": element.population,
+                "lingua": element.languages,
+                "capital": element.capital
+            })
+        });
+        return countries
+    } catch(e) {
+        console.error(e)
+    }
 }
 
 async function getCountry(country) {// 
