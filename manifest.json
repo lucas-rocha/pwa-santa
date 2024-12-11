@@ -3,8 +3,8 @@
     "short_name": "TesteUnisanta",
     "start_url": "https://lucas-rocha.github.io/pwa-santa/",
     "display": "standalone",
-    "theme_color": "",
-    "background_color": "",
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF",
     "icons": [
         {
             "src": "./icons8-partilhar-24.png",
